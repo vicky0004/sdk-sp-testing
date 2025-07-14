@@ -15,3 +15,7 @@ export class sporranSDK {
     public static commands = commands;
     public static commandAsync = commandsAsync;
 }
+
+export * from "./types/common";
+export * from "./types/responses";
+export * from "./types/payloads";
