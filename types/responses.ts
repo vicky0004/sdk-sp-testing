@@ -1,31 +1,12 @@
+import { Network } from './payloads';
+import { PaymentErrorCodes } from './errors';
+
 export enum ResponseEvent {
-  MiniAppPayment = 'miniapp-payment',
+  Payment = 'payment',
   Init = 'init'
 }
-import { Network } from './payments';
-import { PaymentErrorCodes } from './errors';
-export type MiniAppPaymentSuccessPayload = {
-  status: string;
-  transaction_status: 'submitted';
-  transaction_id: string;
-  reference: string;
-  from: string;
-  chain: Network;
-  timestamp: string;
-  version: number;
-};
 
-export type MiniAppPaymentErrorPayload = {
-  status: string;
-  error_code: PaymentErrorCodes;
-  version: number;
-};
-
-export type MiniAppPaymentPayload =
-  | MiniAppPaymentSuccessPayload
-  | MiniAppPaymentErrorPayload;
-
-export type MiniAppInitSuccessPayload = {
+export type InitSuccess = {
   status: string;
   did?: string;
   web3Name?: string;
@@ -33,15 +14,33 @@ export type MiniAppInitSuccessPayload = {
   email?: string;
   name?: string;
 }
-export type MiniAppInitErrorPayload = {
+
+export type InitError = {
   status: string;
   message: string;
 };
-export type MiniAppInitPayload = MiniAppInitSuccessPayload | MiniAppInitErrorPayload  ;
+
+export type InitResponse = InitSuccess | InitError ;
+
+export type PaymentSuccess = {
+  status: string;
+  transaction_status: string;
+  transaction_id: string;
+  from: string;
+  chain: Network;
+  timestamp: string;
+};
+
+export type PaymentError = {
+  status: string;
+  error_code: PaymentErrorCodes;
+};
+
+export type PaymentResponse = PaymentSuccess | PaymentError;
 
 type EventPayloadMap = {
-  [ResponseEvent.MiniAppPayment]: MiniAppPaymentPayload;
-  [ResponseEvent.Init]: MiniAppInitPayload
+  [ResponseEvent.Payment]: PaymentResponse;
+  [ResponseEvent.Init]: InitResponse;
 };
 
 export type EventPayload<T extends ResponseEvent = ResponseEvent> =

@@ -1,4 +1,5 @@
-import { type PayCommandInput } from '../types/commands';
+import { type PayCommandInput } from '../types/payloads';
+
 export const validatePaymentPayload = (payload: PayCommandInput): boolean => {
   if (
     payload.token_symbol !== "KILT" && payload.amount < 0.1
@@ -6,8 +7,6 @@ export const validatePaymentPayload = (payload: PayCommandInput): boolean => {
     console.error('USDC amount should be greater than $0.1');
     return false; // reject
   }
-
-  //further validation can be added here
 
   return true; // accept
 };

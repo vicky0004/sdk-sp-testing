@@ -10,7 +10,7 @@ export enum PaymentErrorCodes {
 }
 
 
-export enum MiniKitInstallErrorCodes {
+export enum InstallErrorCodes {
   Unknown = 'unknown',
   AlreadyInstalled = 'already_installed',
   OutsideOfSporranApp = 'outside_of_sporran_app',
@@ -18,12 +18,12 @@ export enum MiniKitInstallErrorCodes {
   AppOutOfDate = 'app_out_of_date',
 }
 
-export const MiniKitInstallErrorMessage = {
-  [MiniKitInstallErrorCodes.Unknown]: 'Failed to install MiniKit.',
-  [MiniKitInstallErrorCodes.AlreadyInstalled]: 'MiniKit is already installed.',
-  [MiniKitInstallErrorCodes.OutsideOfSporranApp]:
+export const InstallErrorMessage = {
+  [InstallErrorCodes.Unknown]: 'Failed to install Sporran Sdk.',
+  [InstallErrorCodes.AlreadyInstalled]: 'Sporran SDK is already installed.',
+  [InstallErrorCodes.OutsideOfSporranApp]:
     'MiniApp launched outside of SporranApp.',
-  [MiniKitInstallErrorCodes.NotOnClient]: 'Window object is not available.',
-  [MiniKitInstallErrorCodes.AppOutOfDate]:
+  [InstallErrorCodes.NotOnClient]: 'Window object is not available.',
+  [InstallErrorCodes.AppOutOfDate]:
     'SporranApp is out of date. Please update the app.',
 };
