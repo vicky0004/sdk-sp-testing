@@ -18,14 +18,14 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./minikit-provider": {
+    "./sdk-provider": {
       "import": {
-        "types": "./dist/minikit-provider.d.ts",
-        "default": "./dist/minikit-provider.js"
+        "types": "./dist/sdkProvider.d.ts",
+        "default": "./dist/sdkProvider.js"
       },
       "require": {
-        "types": "./dist/minikit-provider.d.cts",
-        "default": "./dist/minikit-provider.cjs"
+        "types": "./dist/sdkProvider.d.cts",
+        "default": "./dist/sdkProvider.cjs"
       }
     }
   },
