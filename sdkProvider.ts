@@ -6,7 +6,7 @@ const sporranSdkContext = createContext<ContextType>({ isInstalled: false , iden
 
 export const useSporranSdk = () => useContext(sporranSdkContext);
 
-export function sporranSdkProvider(props: ContextProviderProps): React.ReactElement {
+export function SporranSdkProvider(props: ContextProviderProps): React.ReactElement {
   const [isInstalled, setIsInstalled] = useState(false);
   const [identity, setIdentity ]  = useState({});
 
