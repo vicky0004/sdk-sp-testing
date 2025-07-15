@@ -10,11 +10,13 @@
   "exports": {
     ".": {
       "import": {
+        "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
     },
     "./sdk-provider": {
       "import": {
+        "types": "./dist/sdkProvider.d.ts",
         "default": "./dist/sdkProvider.js"
       }
     }
