@@ -12,9 +12,7 @@ export function SporranSdkProvider(props: ContextProviderProps): React.ReactElem
 
   useEffect(() => {
     const install_sporranSdk = async () => {
-      alert('Installing Sporran SDK...');
       const result = await sporranSDK.install(props.appId ?? 'unknown-app-id');
-      alert(`Sporran SDK installation result: ${JSON.stringify(result)}`);
       if (result.success) {
         const { did, web3Name, walletAddress, email, name } = result.initResult || {};
         const identity = {

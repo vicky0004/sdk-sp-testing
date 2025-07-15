@@ -6,7 +6,6 @@ export function subscribe<E extends ResponseEvent>(
     event: E,
     handler: EventHandler<E>,
   ): void {
-    alert(`Subscribing to event: ${event}`);
     if (!handler || typeof handler !== 'function') {
       throw new Error('Event handler must be a function');
     }
