@@ -15,6 +15,7 @@ export async function  awaitCommand<
     command: C,
     executor: () => CommandReturnPayload<C> | null,
   ): AsyncHandlerReturn<CommandReturnPayload<C> | null, T> {
+    alert(`Awaiting command: ${command} for event: ${event}`);
     return new Promise((resolve, reject) => {
       const timeoutId = setTimeout(() => {
         unsubscribe(event);

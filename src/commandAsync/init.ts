@@ -6,6 +6,7 @@ import { awaitCommand } from "./commandResolver";
 
 
  export async function init(appId: string): Promise<InitResponse> {
+    alert(`Initializing Sporran SDK with appId: ${appId}`);
     const result = await awaitCommand(
       ResponseEvent.Init,
       Command.init,
