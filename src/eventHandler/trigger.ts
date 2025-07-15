@@ -1,7 +1,7 @@
 
   import { ResponseEvent } from "../types/responses";
   import { EventPayload } from "../types/responses";
-  import { listeners } from "..";
+  import { listeners } from "../index";
   
   export function trigger(event: ResponseEvent, payload: EventPayload): void {
     const handler = listeners.get(event);

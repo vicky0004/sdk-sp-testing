@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { sporranSDK } from './index';
-import { ContextProviderProps, ContextType } from './interfaces/index'; 
+import { ContextProviderProps, ContextType } from './interfaces'; 
 
 const sporranSdkContext = createContext<ContextType>({ isInstalled: false , identity: {} });
 
