@@ -4,6 +4,7 @@ import { EventHandler } from "./types/responses";
 import { commands } from "./commands/index";
 import { commandsAsync } from "./commandAsync/index";
 import { install } from "./commands/install";
+import { trigger } from "./eventHandler/trigger";
 
 export const listeners: Map<ResponseEvent, EventHandler> = new Map();
 
@@ -14,6 +15,7 @@ export class sporranSDK {
     public static install = install ;
     public static commands = commands;
     public static commandAsync = commandsAsync;
+    public static trigger = trigger;
 }
 
 export * from "./types/common";
